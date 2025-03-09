@@ -1,0 +1,145 @@
+﻿@model Crucero.Application.DTOs.HabitacionDTO
+
+@{
+	ViewData["Title"] = "DetalleHabitacion";
+}
+
+<style>
+
+	.titulo-datos {
+		width: 300px;
+		height: 30px;
+		background: #067edc;
+		color: white;
+		text-align: center;
+		border-start-start-radius: 5px;
+		border-start-end-radius: 5px;
+		font-weight: bold;
+	}
+
+	.informacion {
+		width: 300px;
+		height: 50px;
+		background-color: rgba(255, 255, 255, 0.5); /* Blanco con 70% de opacidad */
+		color: black;
+		border-end-end-radius: 5px;
+		border-end-start-radius: 5px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center; 
+		margin-bottom: 10px;
+	}
+
+	.caja-datos {
+		width: 50%;
+		min-width: 200px;
+	}
+
+	.informacion-dimensiones {
+		display: flex;
+		flex-direction: column; /* Solo esta caja tendrá los elementos en columna */
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.contenedor-principal {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 40vh; /* Ocupa toda la altura de la pantalla */
+		margin: 0;
+	}
+
+	.contenido {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+</style>
+
+<div class="Contedor" style="
+margin-top: 12%;
+width: 85%;
+margin-left: 13%;
+">
+	<div style="
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+">
+		<h1 style="
+        color: white;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+        width: 100%;
+		font-family: Algerian;
+		text-align: center;
+padding-right: 100px;
+	">
+			Detalle habitacón
+		</h1>
+	</div>
+	<div style="
+	display: flex;
+	flex-direction: row;
+">
+	<div style="
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	">
+		<div class="caja-datos">
+			<div class="titulo-datos">
+				@Html.DisplayNameFor(model => model.Nombre)
+			</div>
+			<div class="informacion">
+				@Html.DisplayFor(model => model.Nombre)
+			</div>
+		</div>
+		<div class="caja-datos">
+			<div class="titulo-datos">
+				@Html.DisplayNameFor(model => model.Descripcion)
+			</div>
+			<div class="informacion">
+				@Html.DisplayFor(model => model.Descripcion)
+			</div>
+		</div>
+		<div class="caja-datos">
+			<div class="titulo-datos">
+				@Html.DisplayNameFor(model => model.CapacidadMaxima)
+			</div>
+			<div class="informacion">
+				<img width="35" height="35" src="https://img.icons8.com/ios-filled/50/standing-man.png" alt="standing-man" />
+				@Html.DisplayFor(model => model.CapacidadMaxima)
+			</div>
+		</div>
+		<div class="caja-datos">
+			<div class="titulo-datos">
+				@Html.DisplayNameFor(model => model.CapacidadMinima)
+			</div>
+			<div class="informacion">
+				<img width="35" height="35" src="https://img.icons8.com/ios-filled/50/standing-man.png" alt="standing-man" />
+				@Html.DisplayFor(model => model.CapacidadMinima)
+			</div>
+		</div>
+	</div>
+	<div class="caja-datos dimensiones">
+		<div class="titulo-datos">
+			@Html.DisplayNameFor(model => model.Dimensiones)
+		</div>
+		<div class="informacion informacion-dimensiones" style="height: 140px;">
+			<img width="50" height="50" src="https://img.icons8.com/ios-filled/50/room.png" alt="room" />
+			@Html.DisplayFor(model => model.Dimensiones)
+		</div>
+	</div>
+	</div>
+</div>

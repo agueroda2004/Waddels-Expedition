@@ -1,0 +1,132 @@
+﻿@model Crucero.Application.DTOs.BarcoDTO
+
+@{
+    ViewData["Title"] = Model.Nombre;
+    var habitacionesDelBarco = Model.BarcoHabitacion; 
+    int totalHabitaciones = habitacionesDelBarco.Sum(h => h.Cantidad); 
+}
+
+<div class="invoice-container">
+    <div class="invoice-header">
+        <h1 class="invoice-title">Detalle del Barco</h1>
+        <p><strong>Fecha:</strong> @DateTime.Now.ToString("dd/MM/yyyy")</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Detalles del Barco</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Nombre:</th>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>@Model.Descripcion</td>
+        </tr>
+        <tr>
+            <th scope="col">Capacidad máxima de huéspedes</th>
+            <td>@Model.CapacidadMaxima</td>
+        </tr>
+        <tr>
+            <th scope="col">Cantidad de habitaciones disponibles</th>
+            <td>@totalHabitaciones</td> 
+        </tr>
+    </table>
+
+    <h2>Habitaciones Disponibles</h2>
+    @if (Model.BarcoHabitacion.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Habitación</th>
+                    <th>Descripción</th>
+                    <th>Capacidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BarcoHabitacion)
+                {
+                    if (Model.Id == item.IdBarco)
+                    {
+                        <tr>
+                            <td>@item.IdHabitacionNavigation.Nombre</td>
+                            <td>@item.IdHabitacionNavigation.Descripcion</td>
+                            <td>@item.IdHabitacionNavigation.CapacidadMaxima</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">No hay habitaciones disponibles para este barco.</p>
+    }
+
+    <div class="invoice-footer">
+        <button class="btn btn-primary">Reservar</button>
+        <a class="btn btn-outline-secondary" asp-action="Index">Volver</a>
+    </div>
+</div>
+
+<style>
+    .invoice-container {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        font-family: 'Catamaran', sans-serif;
+        margin-top: 6%;
+    }
+
+    .invoice-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1a73e8;
+        margin-bottom: 20px;
+    }
+
+    .divider {
+        border-top: 2px solid #1a73e8;
+        margin: 10px 0;
+    }
+
+    .table-striped thead {
+        background-color: #1a73e8;
+        color: white;
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        background-color: #f1f1f1;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background-color: #1a73e8;
+        color: white;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        margin-right: 10px;
+    }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+        .btn-primary:hover, .btn-outline-secondary:hover {
+            opacity: 0.9;
+        }
+</style>

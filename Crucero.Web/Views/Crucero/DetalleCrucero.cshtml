@@ -1,0 +1,209 @@
+﻿@model Crucero.Application.DTOs.CruceroDTO
+
+@{
+    ViewData["Title"] = "Detalle Crucero";
+}
+
+<div class="invoice-container">
+    <div class="invoice-header">
+        <h1 class="invoice-title">Detalle del Crucero</h1>
+        <p><strong>Fecha:</strong> @DateTime.Now.ToString("dd/MM/yyyy")</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Detalles del Crucero</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Nombre:</th>
+            <td>@Model.Nombre</td>
+        </tr>
+        <tr>
+            <th>Duración:</th>
+            <td>@Model.Duracion días</td>
+        </tr>
+        <tr>
+            <th>Barco:</th>
+            <td>@Model.Barco.Nombre</td>
+        </tr>
+    </table>
+
+    <h2>Itinerarios</h2>
+    @if (Model.Itinerario.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Puerto</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Itinerario)
+                {
+                    <tr>
+                        <td>@item.Puerto.Nombre</td>
+                        <td>@item.Descripcion</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">No hay itinerarios disponibles para este crucero.</p>
+    }
+
+    <div class="fecha-imagen-container">
+        <div class="fecha-precio-container">
+            <h2>Fechas y Precios</h2>
+            @if (Model.FechasCrucero.Any())
+            {
+                @foreach (var fecha in Model.FechasCrucero)
+                {
+                    <div class="fecha-precio-item">
+                        <div class="fecha-header">
+                            Fecha inicio: @fecha.FechaInicio
+                        </div>
+
+                        @foreach (var precios in fecha.PrecioHabitaciones)
+                        {
+                            <div class="precio-item">
+                                Habitación: @precios.Habitacion.Nombre <strong>$</strong>@precios.Precio
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">No hay fechas disponibles para este crucero.</p>
+            }
+        </div>
+
+        <!-- Imagen del Crucero -->
+        <div class="crucero-imagen-container">
+            <img class="crucero-imagen" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Foto)" alt="Imagen Crucero" />
+        </div>
+    </div>
+
+    <div class="invoice-footer">
+        <button class="btn btn-primary">Reservar</button>
+        <a class="btn btn-outline-secondary" asp-action="Index">Volver</a>
+    </div>
+</div>
+
+<style>
+    .invoice-container {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        font-family: 'Catamaran', sans-serif;
+    }
+
+    .invoice-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1a73e8;
+        margin-bottom: 20px;
+    }
+
+    .divider {
+        border-top: 2px solid #1a73e8;
+        margin: 10px 0;
+    }
+
+    .table-striped thead {
+        background-color: #1a73e8;
+        color: white;
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        background-color: #f1f1f1;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .fecha-imagen-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .fecha-precio-container {
+        flex: 1;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .fecha-precio-item {
+        margin-bottom: 15px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+
+    .fecha-header {
+        font-weight: bold;
+        background-color: #067edc;
+        color: white;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .precio-item {
+        padding: 8px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    .crucero-imagen-container {
+        flex: 1;
+        max-width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .crucero-imagen {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #1a73e8;
+        color: white;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        margin-right: 10px;
+        margin-top: 2%;
+    }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        margin-top: 2%;
+    }
+
+        .btn-primary:hover, .btn-outline-secondary:hover {
+            opacity: 0.9;
+        }
+</style>

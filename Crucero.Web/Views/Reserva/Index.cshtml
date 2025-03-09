@@ -1,0 +1,194 @@
+﻿@model IEnumerable<Crucero.Application.DTOs.ReservaDTO>
+
+@{
+    ViewData["Title"] = "Reservas";
+}
+
+<div class="container mt-5">
+    <div style="
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+">
+        <h1 style="
+        color: white;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+        padding: 40px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 100px;
+        font-weight: bold;
+        width: 100%;
+font-family: Algerian;
+    ">
+            Reservas
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.UsuarioId)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.FechasCrucero.FechaInicio)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.CantidadHabitaciones)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.CantidadPasajeros)</th>
+                    
+                    <th scope="col">@Html.DisplayNameFor(model => model.Estado)</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="table-light">
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UsuarioId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechasCrucero.FechaInicio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CantidadHabitaciones)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CantidadPasajeros)</td>
+                        
+                        <td>@Html.DisplayFor(modelItem => item.Estado.Nombre)</td>
+                        
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a asp-action="DetalleReserva" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                 Detalles
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+   
+    h1 {
+        color: aliceblue; 
+        font-family: 'Pacifico', cursive; 
+        text-align: center;
+        font-size: 2.5rem; 
+        margin-bottom: 30px;
+    }
+
+    .table-responsive {
+        background-color: #fff; 
+        border-radius: 10px; 
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: #e0f7fa; 
+    }
+
+    .thead-dark {
+        background-color: #007bff; 
+        color: #fff;
+    }
+
+    .badge-success {
+        background-color: #28a745; 
+    }
+
+    .badge-warning {
+        background-color: #ffc107; 
+    }
+
+    .btn {
+        border-radius: 6px; 
+        font-size: 0.9rem; 
+        padding: 8px 15px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+        .btn-primary:hover {
+            background-color: #004085;
+            border-color: #003366;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+        .btn-info:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        
+
+ 
+    .badge {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 12px;
+    }
+
+   
+    .fas {
+        margin-right: 5px;
+    }
+
+    
+    th, td {
+        font-size: 1rem;
+        text-align: center;
+        padding: 15px;
+    }
+
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    
+    .table th,
+    .table td {
+        border-top: 1px solid #ddd;
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">

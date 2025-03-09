@@ -1,0 +1,45 @@
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\bin\Debug\net8.0\Crucero.Application.deps.json
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\bin\Debug\net8.0\Crucero.Application.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\bin\Debug\net8.0\Crucero.Application.pdb
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.AssemblyReference.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfoInputs.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfo.cs
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.CoreCompileInputs.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero..7AC3F35D.Up2Date
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\refint\Crucero.Application.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\Crucero.Application.pdb
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Application\obj\Debug\net8.0\ref\Crucero.Application.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.deps.json
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.pdb
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.AssemblyReference.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfoInputs.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfo.cs
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.CoreCompileInputs.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero..7AC3F35D.Up2Date
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\refint\Crucero.Application.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.pdb
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Application\obj\Debug\net8.0\ref\Crucero.Application.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.deps.json
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Application.pdb
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.AssemblyReference.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfoInputs.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.AssemblyInfo.cs
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.csproj.CoreCompileInputs.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero..7AC3F35D.Up2Date
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\refint\Crucero.Application.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\Crucero.Application.pdb
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Application\obj\Debug\net8.0\ref\Crucero.Application.dll

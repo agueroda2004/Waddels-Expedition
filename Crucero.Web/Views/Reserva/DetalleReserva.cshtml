@@ -1,0 +1,250 @@
+﻿@model Crucero.Application.DTOs.ReservaDTO
+
+@{
+    ViewData["Title"] = "Factura de Reserva";
+}
+
+<div class="container" style="padding: 70px;">
+    <div class="row">
+        <div class="col-md-12">
+           
+            <div class="invoice-container">
+                <h4 class="invoice-title">Detalles de la Reserva</h4>
+                <hr class="divider" />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>ID de la Reserva:</strong> @Model.Id</p>
+                        <p><strong>Cantidad de Habitaciones:</strong> @Model.CantidadHabitaciones</p>
+                        <p><strong>Cantidad de Pasajeros:</strong> @Model.CantidadPasajeros</p>
+                    </div>
+                    <div class="col-md-6">
+                        
+                        <p><strong>Estado de la Reserva:</strong> @Model.Estado.Nombre</p>
+                        @if(Model.EstadoId== 3)
+                        {
+                            <p><strong>Fecha Limite de Pago:</strong> @Model.FechasCrucero.FehcaLimitePago.ToString("dd/MM/yyyy")</p>
+                        }
+                        
+                    </div>
+                </div>
+
+                <h4 class="invoice-title">Detalles del Crucero</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (Model.FechasCrucero?.Crucero != null)
+                        {
+                            <p><strong>Nombre del Crucero:</strong> @Model.FechasCrucero.Crucero.Nombre</p>
+                            <p><strong>Fecha de Inicio:</strong> @Model.FechasCrucero.FechaInicio.ToString("dd/MM/yyyy")</p>
+                            <p>
+                                <strong>Fecha de Salida:</strong> @if (Model.FechasCrucero.Crucero.Duracion > 0)
+                                {
+                                    @Model.FechasCrucero.FechaInicio.AddDays(Model.FechasCrucero.Crucero.Duracion).ToString("dd/MM/yyyy")
+                                }
+                                else
+                                {
+                                    <span>No disponible</span>
+                                }
+                            </p>
+                        }
+                        else
+                        {
+                            <p><strong>Información del Crucero:</strong> No disponible</p>
+                        }
+                    </div>
+                </div>
+
+                <h4 class="invoice-title">Itinerario</h4>
+                @if (Model.FechasCrucero?.Crucero?.Itinerario?.Any() == true)
+                {
+                    <p><strong>Puerto de Salida:</strong> @Model.FechasCrucero.Crucero.Itinerario.First().Puerto.Nombre</p>
+                    <p><strong>Puerto de Llegada:</strong> @Model.FechasCrucero.Crucero.Itinerario.Last().Puerto.Nombre</p>
+                }
+                else
+                {
+                    <p>No hay información de itinerario disponible.</p>
+                }
+
+                <h4 class="invoice-title">Habitaciones y Precios</h4>
+                @if (Model.CantidadHabitaciones > 0 && Model.ReservaDetalle != null && Model.ReservaDetalle.Any())
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Habitación</th>
+                                <th>Huéspedes</th>
+                                <th>Precio por Habitación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ReservaDetalle)
+                            {
+                                <tr>
+                                    <td>Habitación @item.Habitacion.Nombre</td>
+                                    <td>@Model.CantidadPasajeros</td>
+                                    <td>$@item.Habitacion.PrecioHabitaciones.First().Precio</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+
+                <h4 class="invoice-title">Complementos Agregados</h4>
+                @if (Model.ReservaComplemento != null && Model.ReservaComplemento.Any())
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Complemento</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var complemento in Model.ReservaComplemento)
+                            {
+                                <tr>
+                                    <td>@complemento.Complemento?.Nombre</td>
+                                    <td>@complemento.Cantidad</td>
+                                    <td>$@(complemento.Cantidad * complemento.Complemento.Precio)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>No hay complementos asignados a esta reserva.</p>
+                }
+
+                <h4 class="invoice-title">Totales</h4>
+                @{
+                    var cantidadHabitaciones = Model.CantidadHabitaciones;
+                    int totalHabitaciones = (int)(cantidadHabitaciones * Model.ReservaDetalle[0].Habitacion.PrecioHabitaciones[0].Precio);
+                    int totalComplementos = 0;
+                    
+                    if (Model.ReservaComplemento != null && Model.ReservaComplemento.Any())
+                    {
+                        totalComplementos = (int)Model.ReservaComplemento.Sum(c => (c.Complemento?.Precio ?? 0) * c.Cantidad);
+                    }
+                    
+                    int subtotal = totalHabitaciones + totalComplementos;
+                    var tasaImpuestoHabitaciones = 0.16;
+                    var tasaImpuestoComplementos = 0.10;
+
+                    int impuestoHabitaciones = (int)(totalHabitaciones * tasaImpuestoHabitaciones);
+                    int impuestoComplementos = (int)(totalComplementos * tasaImpuestoComplementos);
+
+                    int impuesto = impuestoHabitaciones + impuestoComplementos;
+                    int totalFinal = subtotal + impuesto;
+                 
+                }
+
+                <ul>
+                    <li><strong>Subtotal:</strong> $@subtotal</li>
+                    <li><strong>Total Complementos:</strong> $@totalComplementos</li>
+                    <li><strong>Total Habitaciones:</strong> $@totalHabitaciones</li>
+                    <li><strong>Impuesto:</strong> $@impuesto</li>
+                    <li><strong>Total Final:</strong> $@totalFinal</li>
+                </ul>
+
+
+                <div class="mt-4">
+                    <a class="btn btn-primary btn-lg" href="@Url.Action("Edit", "Reserva", new { id = Model.Id })">Editar Reserva</a>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    h1 {
+        color: aliceblue;
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    .invoice-container {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        font-family: 'Catamaran', sans-serif;
+        margin-bottom: 80px;
+    }
+
+   
+    .invoice-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1a73e8; 
+        margin-bottom: 20px;
+    }
+
+    
+    .divider {
+        border-top: 2px solid #1a73e8;
+        margin: 10px 0;
+    }
+
+   
+    .text-success {
+        color: #28a745;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    
+    .table-striped thead {
+        background-color: #1a73e8;
+        color: white;
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        background-color: #f1f1f1;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    
+    .btn-primary {
+        background-color: #1a73e8;
+        color: white;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        margin-right: 10px;
+    }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+        color: #6c757d;
+        border-radius: 5px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+        .btn-primary:hover, .btn-outline-secondary:hover {
+            opacity: 0.9;
+        }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+        ul li {
+            font-size: 1.1rem;
+            padding: 5px 0;
+            font-weight: bold;
+            color: #333;
+        }
+</style>

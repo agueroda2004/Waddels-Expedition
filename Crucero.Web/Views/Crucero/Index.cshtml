@@ -1,0 +1,230 @@
+﻿@model IEnumerable<Crucero.Application.DTOs.CruceroDTO>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<style>
+    .button {
+        --width: 100%;
+        --height: 35px;
+        --tooltip-height: 35px;
+        --tooltip-width: 90px;
+        --gap-between-tooltip-to-button: 18px;
+        --button-color: #067edc;
+        --tooltip-color: #fff;
+        width: var(--width);
+        height: var(--height);
+        background: var(--button-color);
+        position: relative;
+        text-align: center;
+        border-radius: 0.45em;
+        font-family: "Arial";
+        transition: background 0.3s;
+        border-radius: 2px;
+        cursor: pointer;
+        box-shadow: 0 0 5px gray;
+    }
+
+        .button::before {
+            position: absolute;
+            content: attr(data-tooltip);
+            width: var(--tooltip-width);
+            height: var(--tooltip-height);
+            background-color: #555;
+            font-size: 0.9rem;
+            color: #fff;
+            border-radius: .25em;
+            line-height: var(--tooltip-height);
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+            left: calc(50% - var(--tooltip-width) / 2);
+        }
+
+        .button::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #555;
+            left: calc(50% - 10px);
+            bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
+
+        .button::after, .button::before {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
+
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-wrapper, .text, .icon {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        color: #fff;
+    }
+
+    .text {
+        top: 0
+    }
+
+    .text, .icon {
+        transition: top 0.5s;
+    }
+
+    .icon {
+        color: #fff;
+        top: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+    .button:hover {
+        background: #067edc;
+    }
+
+        .button:hover .text {
+            top: -100%;
+        }
+
+        .button:hover .icon {
+            top: 0;
+        }
+
+        .button:hover:before, .button:hover:after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .button:hover:after {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
+
+        .button:hover:before {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
+
+    .underline-effect {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+        .underline-effect::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px; /* Grosor de la línea */
+            background-color: #067edc; /* Color de la línea */
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .underline-effect:hover::after {
+            transform: scaleX(1);
+        }
+
+</style>
+
+<div style="
+width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+">
+
+<div style="
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+">
+    <h1 style="
+        color: white;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+        padding: 40px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 100px;
+        font-weight: bold;
+        width: 100%;
+font-family: Algerian;
+    ">Cruceros
+    </h1>
+</div>
+
+<div style="
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+width: 65%;
+">
+
+
+	@foreach (var item in Model)
+	{
+		<div style="
+                    background-color: white;
+                    width: 250px;
+                    border-radius: 5px;
+	    ">
+			<img style="
+                    max-width:250px;
+                    height: 200px;
+                    border-start-end-radius: 5px;
+                    border-start-start-radius: 5px;
+                    box-shadow: 0 0 5px gray;
+					"
+				 src="data:image/jpeg;base64,@Convert.ToBase64String(item.Foto)"
+				 alt="Imagen" />
+			<div style="
+                        padding: 5px;
+                        ">
+                    <a href="@Url.Action("DetalleCrucero", new { id = item.Id })" class="underline-effect">
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </a>
+				<div style="padding: 5px; font-size: 10px; text-align: center;">Duración @Html.DisplayFor(modelItem => item.Duracion) días</div>
+			</div>
+                <!-- From Uiverse.io by JaydipPrajapati1910 -->
+                <div data-tooltip="Desde:$1500" class="button">
+                    <div class="button-wrapper">
+                        <div class="text">Comprar</div>
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+		</div>
+	}
+</div>
+</div>

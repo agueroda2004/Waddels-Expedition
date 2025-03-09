@@ -1,0 +1,36 @@
+﻿.table {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.div-contenedor {
+    background-color: red;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: #000deb;
+    text-align: center;
+    border-radius: 10px;
+}
+
+th {
+    background-color: #3562F5;
+    color: white;
+}
+
+.titulo {
+    color: red;
+    padding-bottom: 1%
+}
+
+.datos {
+    max-height : 20px
+}
+
+.contenedor {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: red;
+}

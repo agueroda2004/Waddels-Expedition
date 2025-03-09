@@ -1,0 +1,42 @@
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.deps.json
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.runtimeconfig.json
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfo.cs
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\refint\Crucero.Infraestructure.dll
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.genruntimeconfig.cache
+C:\Users\DevDani\Desktop\Waddels Expedition\Crucero.Infraestructure\obj\Debug\net8.0\ref\Crucero.Infraestructure.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.deps.json
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.runtimeconfig.json
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfo.cs
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\refint\Crucero.Infraestructure.dll
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.genruntimeconfig.cache
+C:\Users\melan\OneDrive\Desktop\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\ref\Crucero.Infraestructure.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.deps.json
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.runtimeconfig.json
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\bin\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.AssemblyInfo.cs
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\refint\Crucero.Infraestructure.dll
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.pdb
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\Crucero.Infraestructure.genruntimeconfig.cache
+C:\Users\DevDani\Downloads\Proyecto Wadell\Prueba\Crucero.Infraestructure\obj\Debug\net8.0\ref\Crucero.Infraestructure.dll
